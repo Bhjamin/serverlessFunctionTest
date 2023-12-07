@@ -1,6 +1,13 @@
-export const handler = async () => {
+export const handler = async (event) => {
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "GET",
+  };
+
   return {
     statusCode: 200,
-    body: "Yay you got a response!",
+    headers,
+    body: "This was not a POST request!",
   };
 };
